@@ -1,0 +1,21 @@
+<div class="fade-in-container">
+  <div *ngIf="Trams">
+    <h1 class="h1-title">
+      Available Trams Heading towards Gullmarsplan during the next hour
+    </h1>
+    <ul class="background" *ngIf="Trams">
+      <li *ngFor="let tram of Trams">
+        <p class="name">ETA: {{ tram.ExpectedDateTime | date: "shortTime" }}</p>
+
+        <p class="country">> {{ tram.Destination }}</p>
+        <p class="country">Time Left: {{ tram.DisplayTime }}</p>
+      </li>
+      >
+    </ul>
+  </div>
+  <div class="fade-in-text" *ngIf="!Trams">
+    <h1 class="h1-message">Sorry</h1>
+    <h1 class="h1-message">No Available Trams</h1>
+    <h1 class="h1-message">during the next hour</h1>
+  </div>
+</div>

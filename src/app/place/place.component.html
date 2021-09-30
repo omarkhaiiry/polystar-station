@@ -1,0 +1,19 @@
+<div class="fade-in-container">
+  <div *ngIf="Places">
+    <h1 class="h1-title">Cities To Visit in sweden</h1>
+    <ul class="background" *ngIf="Places">
+      <li *ngFor="let place of Places">
+        <p class="name">
+          {{ place.name }}
+        </p>
+        <p class="country">{{ place.summary }}</p>
+        <a [attr.href]="place.link" target="_blank" class="city"
+          >Check places there</a
+        >
+      </li>
+    </ul>
+    <a href="https://cutt.ly/hETmRgW" target="_blank" class="h1-title"
+      >Click here for more cities</a
+    >
+  </div>
+</div>
